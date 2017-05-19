@@ -17,7 +17,7 @@ clear path
 set(0,'DefaultFigureColor','w')
 cmap = flipud(colormap('bone(512)'));
 set(0,'DefaultFigureColormap', cmap);
-close 0
+close 1
 
 cmd = sprintf(['axis image; colorbar;  set(gcf,''PaperPosition'',[0 0 5 5], ''PaperSize'', [5 5]);',...
     ' set(gca,''xtick'',[],''ytick'',[])']);
@@ -76,7 +76,7 @@ p.b_s = 1150;
 
 p.unitary = 1;
 p.main_modes = 3;
-p.recon_modes = 4;
+p.recon_modes = 3;
 p.shifts_per_mode = 0;
 p.num_modes = p.main_modes*(1 + p.shifts_per_mode);
 
@@ -199,7 +199,7 @@ toc
 p.b_0 = 0.99;
 p.b_m = 0.99;
 p.b_s = 500;
-for ii = 7:8
+for ii = 2:4
     iterations{ii} = 5000;
     tic
     sprintf('start %s', char(datetime, 'yyyy_MM_dd_''T''HH_mm_ss'))
